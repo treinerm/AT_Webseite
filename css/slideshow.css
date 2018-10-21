@@ -8,6 +8,8 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
+  margin-top: 0.5%;
+  overflow-y:hidden;
 }
 
 /* Next & previous buttons */

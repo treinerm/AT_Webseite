@@ -45,7 +45,8 @@
             margin-right:11%;
         }
         
-        #mapid { height: 180px; }
+        #mapid { height: 50%;
+                width: 100%;}
     
         </style>
         <link rel="shortcut icon" href="../static/images/lightbulb1.png" type="image/png" />
@@ -84,40 +85,54 @@
         
         
         <main>
-            <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
-            <div class="col s2">
             
-              <a target="_blank" href="https://www.google.com/maps/place/Anton+Treiner/@48.8915091,8.8517822,17z/data=!4m12!1m6!3m5!1s0x47977ae37b5f946d:0xc0dca25b7e2871ea!2sAnton+Treiner!8m2!3d48.8915056!4d8.8539709!3m4!1s0x47977ae37b5f946d:0xc0dca25b7e2871ea!8m2!3d48.8915056!4d8.8539709"><img src="../static/images/ort.png" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
-            </div>
-            <div class="col s10">
-              <span class="black-text">
+            <div class="row">
+    <div class="col s6">
+      <div class="card" style="width:70%">
+        <div class="card-image">
+          <img src="../static/images/baggerschaufel.jpg">
+          <span class="card-title">Kontaktdaten</span>
+        </div>
+        <div class="card-content">
+          <span class="black-text">
                   <p>Anton Treiner</p>
                   <p>75446 Wiernsheim</p>
                   <p>Weiherstraße 20</p>
+                  <p>0171/7853311</p>
               </span>
-            </div>
-              
-          </div>
+        </div>
+          <div class="card-action">
+          <a target="_blank" href="https://www.google.com/maps/place/Anton+Treiner/@48.8915091,8.8517822,17z/data=!4m12!1m6!3m5!1s0x47977ae37b5f946d:0xc0dca25b7e2871ea!2sAnton+Treiner!8m2!3d48.8915056!4d8.8539709!3m4!1s0x47977ae37b5f946d:0xc0dca25b7e2871ea!8m2!3d48.8915056!4d8.8539709">Karten</a>
         </div>
       </div>
-            <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
-            <div class="col s2">
-                <a href="mailto:ATreiner@t-online.de"subject=Feedback for webdevelopersnotes.com&body=The Tips and Tricks section is great><img src="../static/images/mail.png" alt="" class="circle responsive-img"></a> <!-- notice the "circle" class -->
-
-            </div>
-            <div class="col s10">
-              <span class="black-text">
-                ATreiner@t-online.de
-              </span>
-            </div>
-          </div>
+    </div>
+                <div class="col s6">
+    
+      <div id="mapid">
         </div>
       </div>
-        </main>
+    </div>
+            <div class="row">
+                <div class="col s12 m6">
+            <div class="card" style="width:70%">
+        <div class="card-image">
+          <img src="../static/images/mail2.jpg">
+          <span class="card-title">E-Mail</span>
+        </div>
+        <div class="card-content">
+          <span class="black-text">
+                <p>ATreiner@t-online.de</p>
+                
+              </span>
+            </div>
+                <div class="card-action">
+                <a href="mailto:ATreiner@t-online.de">EMAIL</a>
+                </div>
+                </div>
+                </div>
+            </div>
+          </main>
+        
         
             <footer class="page-footer grey darken-3">
           <div class="container">
@@ -136,7 +151,9 @@
             </div>
           </div>
         </footer>
-
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
 <!-- Compiled and minified JavaScript --> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> 
@@ -154,8 +171,17 @@
     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
   }
 );
-    
+    var mymap = L.map('mapid').setView([48.891476, 8.853942], 14);
 
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+    var marker = L.marker([48.891476, 8.853942]).addTo(mymap);
+    marker.bindPopup("<b>Wiernsheim</b><br>Weiherstraße 20").openPopup();
 </script>
             
             
