@@ -41,8 +41,19 @@
             margin-right:11%;
         }
         img {
-height:auto;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
 }
+
+        .titel {
+            font-size:32px !important;
+        }
+        @media only screen and (max-width: 600px) {
+            .titel{
+                font-size:23px !important;
+            }
+        }
     
         </style>
         <link rel="shortcut icon" href="../static//logo.PNG" type="image/png" />
@@ -52,6 +63,7 @@ height:auto;
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
+        <link rel="stylesheet" href="page.css" type="text/css" media="screen,projection" />
     
     </head>
     
@@ -61,10 +73,10 @@ height:auto;
         <div class="navbar-fixed">
         <nav class="nav-extended grey darken-3">
     <div class="nav-wrapper">
-        <a class="brand-logo center">Anton Treiner</a>
+        <a class="brand-logo center titel">Anton Treiner</a>
         <a href="#" data-activates="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="../views/AT_Webseite_Home.html"  style="background-color:cadetblue;" class="waves-effect waves-teal" title="Hier gelangen Sie zur Home Ansicht!"><i class="material-icons left " >home</i>Home</a></li>
+        <li><a href="../views/index.html"  style="background-color:cadetblue;" class="waves-effect waves-teal" title="Hier gelangen Sie zur Home Ansicht!"><i class="material-icons left " >home</i>Home</a></li>
         <li><a href="../views/AT_Webseite_Service.html" title="Hier gelangen Sie zum Service!" class="waves-light waves-effect"><i class="material-icons left"  >build</i>Mein Service für Sie</a></li>
         <li><a href="../views/AT_Webseite_Kontakt.html" class="waves-effect waves-light" title="Hier gelangen Sie zu meinen Kontaktdaten!" ><i class="material-icons left" class="waves-effect waves-light" >person</i>Kontakt</a></li>
       </ul>
@@ -72,7 +84,7 @@ height:auto;
             
   </nav>
             <ul class="sidenav" id="mobile-demo">
-    <li><a href="../views/AT_Webseite_Home.html" class="waves-light waves-effect" title="Hier gelangen Sie zur Home Ansicht!" style="background-color:cadetblue"><i class="material-icons left " >home</i>Home</a></li>
+    <li><a href="../views/index.html" class="waves-light waves-effect" title="Hier gelangen Sie zur Home Ansicht!" style="background-color:cadetblue"><i class="material-icons left " >home</i>Home</a></li>
         <li><a href="../views/AT_Webseite_Service.html" class="waves-light waves-effect" title="Hier gelangen Sie zum Service!"><i class="material-icons left" >build</i>Mein Service für Sie</a></li>
         <li><a href="../views/AT_Webseite_Kontakt.html" class="waves-light waves-effect" title="Hier gelangen Sie zu meinen Kontaktdaten!"><i class="material-icons left" >person</i>Kontakt</a></li>
   </ul>
@@ -82,7 +94,7 @@ height:auto;
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="../static/images/logo.PNG" style="width:auto">
+  <img src="../static/images/wegebau_und_wegsanierung.jpg" style="width:auto">
   <div class="text">Caption Text</div>
 </div>
 
@@ -116,6 +128,7 @@ height:auto;
         <div class="weiß"  >
             <div style="margin-left:10%;margin-right:10%">
         <h5>Über mich und das Unternehmen</h5>
+                
         <p>Mein Ziel ist es Ihnen einen kompetenten und hochwertigen Service im Bereich der Bauwirtschaft zu bieten.</p>
         <p>Seit 1989 bin ich im Bauwesen tätig und verfüge daher über umfassende, wertvolle Berufserfahrung. Gerne
         stelle ich Ihnen meinen Service zur Verfügung.</p> 
