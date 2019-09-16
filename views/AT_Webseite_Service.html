@@ -77,9 +77,8 @@
         <link rel="icon" href="../static/images/logo.PNG" type="image/png" />
         <link rel="stylesheet" href="../css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
-        
     
     </head>
     
@@ -403,23 +402,50 @@ E-Mail: atreiner@t-online.de</p>
     $(document).ready(function(){
     $('.modal').modal();
   })
+    
 function getHighestHeight() {
     height = 0;
+    try {
     document.querySelectorAll('.card-image').forEach(function(button) {
         if($(button).height()>height) {
             height = $(button).height();
         }
         
     });
+    }
+    catch(e) {
+        var array = document.querySelectorAll('.card-image');
+        for(var index=0;index<array.length;index++) {
+            if($(array[index]).height()>height) {
+                height = $(array[index]).height();
+        }
+            
+        }
+    }
     return height;
                 }
+    
+    
 function setHeight(height) {
+    try {
     document.querySelectorAll('.responsive-img').forEach(function(button) {
             $(button).height(height);
             console.log(height);
         });
-}
-</script>
+        }
+    catch(e) {
+        var array = document.querySelectorAll('.responsive-img');
+        for(var index=0;index<array.length;index++) {
+                $(array[index]).height(height);
+        }
+            
+        }
+    }
+
+    
+    
+</script>#
+        
             
     </body>
     
