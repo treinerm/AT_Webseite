@@ -75,6 +75,11 @@
     height: auto;
     width: auto\9;
         }
+        @media only screen and (max-width: 400px) {
+            .phone-distance {
+        margin-bottom: 10px;
+        }
+        }
         
         </style>
         <link rel="shortcut icon" href="../static/images/logo.PNG" type="image/png" />
@@ -83,12 +88,13 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
+        <title>Anton Treiner</title>
     
     </head>
     
     <body>
         
-        <title>Anton Treiner</title>
+        
         <div class="navbar-fixed">
         <nav class="nav-extended grey darken-3">
     <div class="nav-wrapper">
@@ -195,7 +201,7 @@
             </p>
             <!-- Modal Trigger Wegebau und Wegsanierung -->
             <br>
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal2"> <i class="material-icons">image</i> Weitere Bilder</a>
+  <a class="waves-effect waves-light btn modal-trigger phone-distance" href="#modal2"> <i class="material-icons">image</i> Weitere Bilder</a>
 
   <!-- Modal Structure -->
   <div id="modal2" class="modal">
@@ -208,6 +214,21 @@
         <img src="../static/images/wegebau_und_wegsanierung/wegebau_und_wegsanierung_5.jpg">
         <img src="../static/images/wegebau_und_wegsanierung/wegebau_und_wegsanierung_6.jpg">
         <img src="../static/images/wegebau_und_wegsanierung/wegebau_und_wegsanierung_7.jpg">
+    </div>e
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red lighten-1" style="color:white">Schliessen</a>
+    </div>
+  </div>
+<a class="waves-effect waves-light btn modal-trigger" href="#modal3"> <i class="material-icons">videocam</i> Beispielvideo</a>
+
+  <!-- Modal Structure -->
+  <div id="modal3" class="modal">
+    <div class="modal-content modal-services">
+      <h4>Video</h4>
+        <video controls>
+          <source src="../static/videos/AT_Video_min.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>e
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat red lighten-1" style="color:white">Schliessen</a>
@@ -394,14 +415,6 @@ function setHeight(height) {
             
         }
     }
-
-    
-    
-</script>
-        
-            
+</script> 
     </body>
-    
-    
-    
 </html>
